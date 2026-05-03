@@ -1,0 +1,7 @@
+{
+  "name": "MediMind",
+  "description": "MediMind is a simple, intelligent mobile platform designed to help older adults manage their daily health with confidence and ease by recognizing medications, providing reminders, and suggesting personalized diet and exercise plans.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
