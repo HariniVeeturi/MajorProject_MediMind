@@ -1,20 +1,20 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+MediMind – AI-Powered Medication Management System
 
-# Run and deploy your AI Studio app
+An intelligent mobile-based healthcare solution that automates medication management using Computer Vision, OCR, and AI. MediMind eliminates manual data entry by scanning medicine strips or prescriptions and generating structured medication schedules with reminders and insights.
 
-This contains everything you need to run your app locally.
+🚀 Features
+📸 Scan Medicine Strips & Prescriptions
+🧹 Advanced Image Preprocessing Pipeline (8 Stages)
+🔍 OCR-based Text Extraction
+📅 Automatic Medication Scheduling
+🔔 Smart Reminders & Adherence Tracking
+📦 Inventory Management
+🧠 AI-Based Health Recommendations (Explainable AI)
 
-View your app in AI Studio: https://ai.studio/apps/4b00426f-a3f0-4215-809e-a88d8466ae96
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Performance
+Metric	Value
+OCR Accuracy (Raw) ~61%
+OCR Accuracy (Processed)	97%
+Precision	97.5%
+Recall	95.3%
+F1 Score	0.9639
