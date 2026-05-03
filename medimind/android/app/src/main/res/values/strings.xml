@@ -4,5 +4,5 @@
     <string name="title_activity_main">MediMind</string>
     <string name="package_name">app.medimind.senior</string>
     <string name="custom_url_scheme">app.medimind.senior</string>
-    <string name="gemini_api_key">AIzaSyBbhZ9LnbUU0uOBGtY-S8-58x1lval-kzs</string>
+    <string name="gemini_api_key">API_KEY</string>
 </resources>
