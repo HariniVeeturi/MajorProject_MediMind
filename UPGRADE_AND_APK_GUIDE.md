@@ -1,37 +1,5 @@
 # MediMind — Upgrade Guide & APK Build Instructions
 
-## What Was Upgraded
-
-### 1. 🤖 Reinforcement Learning (RL) Tips Engine
-**File:** `services/rlService.ts`
-
-Implements a **UCB1 Multi-Armed Bandit** algorithm:
-- Every tip is an "arm" of the bandit
-- When you tap "Helpful" → reward = 1; "Not helpful" → reward = 0
-- UCB1 score = `avg_reward + √(2·ln(total_trials) / arm_trials)`
-- The exploration bonus ensures new/unseen tips still surface
-- Tips are **re-ranked in real time** after every feedback
-- State persists in `localStorage` across app restarts
-- A **⭐ Top tip for you** badge appears once a tip reaches ≥60% helpful rate
-
-### 2. 🧠 Explainable AI (XAI) Layer
-**File:** `services/xaiService.ts`
-
-Implements a **SHAP-inspired feature attribution** system:
-- Each recommendation has a "Why was I shown this?" panel
-- Feature bars (0–100%) show how much each factor in your profile contributed
-- Blue bar = positive driver, Amber bar = caution factor
-- Runs fully client-side — no extra API call
-- Example: "Hypertension → 90% influence on diet tip about sodium"
-
-### 3. ✅ Updated Types
-**File:** `types.ts`
-- `Recommendation` now includes `feedback`, `xaiFeatures`
-- New interfaces: `XAIFeature`, `TipBanditState`, `RLState`
-- `UserData` includes optional `rlState`
-
----
-
 ## How to Build an APK
 
 ### Prerequisites (install once)
@@ -77,17 +45,6 @@ Open `android/app/src/main/assets/capacitor.config.json` and add:
   }
 }
 ```
-
-Also set your API key in `android/app/src/main/res/values/strings.xml`:
-```xml
-<string name="gemini_api_key">YOUR_API_KEY_HERE</string>
-```
-
-Or inject it via environment in your vite build:
-```bash
-VITE_API_KEY=your_key_here npm run build
-```
-
 ### Step 5: Open in Android Studio & build APK
 ```bash
 npx cap open android
@@ -110,9 +67,3 @@ Or simply share the .apk file and open it on your Android device (enable "Instal
 # Create a keystore, fill details, build Release APK
 ```
 
----
-
-## Notes
-- The Gemini API key must be set at build time via environment variable
-- The RL model state and XAI features are fully offline — only tip **generation** needs internet
-- The app is a PWA — it can also be added to home screen on Android without APK via Chrome → "Add to Home Screen"
